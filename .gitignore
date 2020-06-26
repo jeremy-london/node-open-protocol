@@ -63,4 +63,8 @@ docs/jsdoc
 # Visual Studio Code config folder
 .vscode
 
+# IntelliJ IDEA
 .idea
+
+#MacOS
+.DS_Store

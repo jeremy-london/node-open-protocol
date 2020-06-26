@@ -1,6 +1,6 @@
 {
-  "name": "node-open-protocol",
-  "version": "1.1.0",
+  "name": "node-open-protocol-desoutter",
+  "version": "1.2.0",
   "description": "Node of Open Protocol",
   "main": "index.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/netsmarttech/node-open-protocol"
+    "url": "https://github.com/jeremy-london/node-open-protocol-desoutter"
   },
   "keywords": [
     "atlas-copco",

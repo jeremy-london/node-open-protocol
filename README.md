@@ -2,9 +2,13 @@
 
 This node is an implementation of the Atlas Copco's Open Protocol.
  
-This node was created by [Smart-Tech](https://netsmarttech.com) as part of the [ST-One](https://netsmarttech.com/page/st-one) project.
+This node is a expansion on the node created by [Smart-Tech](https://netsmarttech.com) as part of the [ST-One](https://netsmarttech.com/page/st-one) project.
 
 Documentation: [Open Protocol R 2.8.0](docs/OpenProtocolSpecification_R280.pdf)
+
+## Changes
+
+All Changes to this repo can be found here: [Commit Comparison](https://github.com/netsmarttech/node-open-protocol/compare/master...jeremy-london:master)
 
 ## What is Open Protocol?
 
@@ -52,14 +56,14 @@ _Please consider the support of Generic MIDs experimental_
 
 ### Install
 
-`npm install node-open-protocol`
+`npm install node-open-protocol-desoutter`
 
 ### Instance and connection
 
 The variable `options` is optional, in the example below it will be created with default values.
 
 ```javascript
-const openProtocol = require('node-open-protocol');
+const openProtocol = require('node-open-protocol-desoutter');
 
 let options = {
 
@@ -102,7 +106,7 @@ let op = openProtocol.createClient(controllerIp, controllerPort, options, (data)
 or then simply:
 
 ```javascript
-const openProtocol = require('node-open-protocol');
+const openProtocol = require('node-open-protocol-desoutter');
 
 let controllerIp = "127.0.0.1";
 let controllerPort = "4545";
@@ -273,7 +277,7 @@ op.sendMid(1, (err) => {
 This example shows how to perform a subscribe in `lastTightening` and make a tightening call.
 
 ```javascript
-const openProtocol = require('node-open-protocol');
+const openProtocol = require('node-open-protocol-desoutter');
 
 let op = openProtocol.createClient(4545, "127.0.0.1", () => {
     console.log("Connected!");
@@ -339,7 +343,7 @@ function startTightening(parameterSetID, numberVIN) {
 Or then with async/await functions:
 
 ```javascript
-const openProtocol = require('node-open-protocol');
+const openProtocol = require('node-open-protocol-desoutter');
 
 async function onClientConnected() {
     console.log("Connected!");
