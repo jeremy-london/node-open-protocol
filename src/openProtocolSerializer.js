@@ -158,7 +158,7 @@ class OpenProtocolSerializer extends Transform {
         buf.write(pad(chunk.mid, 4), 4, 4, encodingOP);
 
         /*
-        Copyright 2020 Jeremy London
+        Copyright 2021 Jeremy London
 
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
@@ -177,13 +177,11 @@ class OpenProtocolSerializer extends Transform {
         Desoutter controllers did not like the version number. 
         Sending blank characters for this header option got it to work
         */
+        
+        /* 
+        Removes extra serialization code that is not needed by Desoutter controller
+        */
         buf.write('            ', 8, encodingOP);
-        buf.write(chunk.noAck ? '1' : '0', 11, encodingOP);
-        buf.write(pad(chunk.stationID, 2), 12, encodingOP);
-        buf.write(pad(chunk.spindleID, 2), 14, encodingOP);
-        buf.write(pad(chunk.sequenceNumber, 2), 16, encodingOP);
-        buf.write(pad(chunk.messageParts, 1), 18, encodingOP);
-        buf.write(pad(chunk.messageNumber, 1), 19, encodingOP);
         buf.write(chunk.payload.toString(encodingOP), 20, encodingOP);
         buf.write("\u0000", sizeMessage, encodingOP);
 
